@@ -51,4 +51,23 @@ public class ArrayListAlgorithms {
         }
         return ints;
     }
+
+    /** Appends an uppercase version of each string to the end of wordList;
+     *  the uppercase versions appear in the same order as the lowercase versions
+     *  for example, if wordList is ["hello", "my", "best", "friend"]
+     *  this this method modifies wordList to be:
+     *  ["hello", "my", "best", "friend", "HELLO", "MY", "BEST", "FRIEND"]
+     *
+     *  DOES mutate (modify) elements in wordList
+     *  PRECONDITIONS: wordList.size() > 0,
+     *                 all words in wordList are initially lowercase
+     *
+     *  @param wordList  arraylist of Strings
+     */
+    public static void duplicateUpperEnd(ArrayList<String> wordList) {
+        int words = wordList.size();
+        for (int i = 0; i < words; i++) {
+            wordList.add(wordList.get(i).toUpperCase());
+        }
+    }
 }
