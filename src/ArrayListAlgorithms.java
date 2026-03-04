@@ -36,4 +36,19 @@ public class ArrayListAlgorithms {
             }
         }
     }
+
+    /** Returns an ArrayList with all elements of arr reversed
+     *
+     *  Does NOT mutate (modify) elements in intList.
+     *  PRECONDITION: intList.size() > 0
+     *
+     *  @param intList  original array of integers
+     */
+    public static ArrayList<Integer> reverseArray(int[] intList) {
+        ArrayList<Integer> ints = new ArrayList<>();
+        for (int i = intList.length - 1; i >= 0; i--) {
+            ints.add(intList[i]);
+        }
+        return ints;
+    }
 }
