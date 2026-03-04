@@ -119,4 +119,24 @@ public class ArrayListAlgorithms {
             }
         }
     }
+
+    /** Removes all duplicate values from an intList, leaving only the first
+     *  occurrence in the arrayList; for example, this method will modify
+     *  [1, 2, 5, 4, 2, 2, 1, 6, 4, 4, 8, 1, 7, 4, 2] --> [1, 2, 5, 4, 6, 8, 7]
+     *
+     *  DOES mutate (modify) elements in intList
+     *  PRECONDITION: intList.size() > 0
+     *
+     *  @param intList  intList of Integers
+     */
+    public static void removeDuplicates(ArrayList<Integer> intList) {
+        for (int i = 0; i < intList.size(); i++) {
+            for (int j = 0; j < intList.size(); j++) {
+                if (i != j && intList.get(i).equals(intList.get(j))) {
+                    intList.remove(j);
+                    j--;
+                }
+            }
+        }
+    }
 }
