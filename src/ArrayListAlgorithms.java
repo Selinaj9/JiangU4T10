@@ -70,4 +70,28 @@ public class ArrayListAlgorithms {
             wordList.add(wordList.get(i).toUpperCase());
         }
     }
+
+    /** Returns an arraylist of Strings that represents the input sentence parsed
+     *  into separate words, using a single space (" ") as the delimiter
+     *
+     *  For example, if sentence = "This is my sentence!"
+     *  this method return the arraylist: [This, is, my, sentence!]
+     *
+     *  PRECONDITION: sentence does not end with a space and each word is
+     *                separated by exactly one space
+     *
+     *  @param sentence  the input String
+     *  @return  new arraylist of Strings containing the words of sentence
+     */
+    public static ArrayList<String> parseSentence(String sentence) {
+        ArrayList<String> words = new ArrayList<>();
+        int idx = sentence.indexOf(" ");
+        while (idx != -1) {
+            words.add(sentence.substring(0, idx));
+            sentence = sentence.substring(idx + 1);
+            idx = sentence.indexOf(" ");
+        }
+        words.add(sentence);
+        return words;
+    }
 }
