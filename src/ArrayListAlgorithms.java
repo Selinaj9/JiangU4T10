@@ -94,4 +94,29 @@ public class ArrayListAlgorithms {
         words.add(sentence);
         return words;
     }
+    /** Moves all words in wordList that begin with "b" to the front of
+     *  wordList; all "b" words that are moved should appear in the same order
+     *  in the modified arrayList as they did before being moved
+     *
+     *  For example, this method will take a wordList:
+     *  ["apple", "banana", "cherry", "donut", "bagel", "danish", "berry", "baguette", "soda"]
+     *  and modify it to
+     *  ["banana", "bagel", "berry", "baguette", "apple", "cherry", "donut", "danish", "soda"]
+     *
+     *  DOES mutate (modify) elements in wordList
+     *  PRECONDITIONS: - wordList.size() > 0
+     *                 - all strings in wordList have length >= 1
+     *
+     *  @param wordList  arraylist of words
+     */
+    public static void moveBWords(ArrayList<String> wordList) {
+        int idx = 0;
+        for (int i = 0; i < wordList.size(); i++) {
+            if (wordList.get(i).substring(0, 1).equals("b")) {
+                wordList.add(idx, wordList.get(i));
+                idx++;
+                wordList.remove(i + 1);
+            }
+        }
+    }
 }
